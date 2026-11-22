@@ -1,0 +1,106 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="logo">AI</div>
+            <div class="header-info">
+                <h2>AI Assistant</h2>
+                <p id="providerDescription">Powered by Google Gemini</p>
+            </div>
+        </header>
+
+        <!-- Model and document settings -->
+        <section class="document-section">
+
+            <div class="model-selection">
+                <label for="aiProvider">AI Model</label>
+
+                <select id="aiProvider">
+                    <option value="gemini">Google Gemini</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <div class="document-actions">
+
+                <label class="rag-toggle">
+                    <input type="checkbox" id="ragMode">
+                    Generate RAG Response
+                </label>
+
+                <input type="file"
+                       id="documentInput"
+                       accept=".txt,.pdf,.docx"
+                       hidden />
+
+                <button type="button" id="uploadButton">
+                    Upload Document
+                </button>
+
+            </div>
+
+            <p id="uploadStatus" class="upload-status">
+                Supported formats: TXT, PDF, DOCX
+            </p>
+
+            <p id="modeStatus" class="mode-status">
+                Select an AI model and start chatting.
+            </p>
+
+        </section>
+
+        <!-- Chat messages -->
+        <main id="chatMessages" class="chat-messages">
+
+            <div class="message assistant">
+                <div class="message-bubble">
+                    Hello! I'm your AI assistant. How can I help you today?
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            AI is thinking...
+        </div>
+
+        <!-- Chat input -->
+        <form id="chatForm" class="chat-input-area">
+
+            <input type="text"
+                   id="messageInput"
+                   placeholder="Type your message..."
+                   autocomplete="off"
+                   required />
+
+            <button type="submit" id="sendButton">
+                Send
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- HTML sanitizer -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+
+    <!-- Application JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

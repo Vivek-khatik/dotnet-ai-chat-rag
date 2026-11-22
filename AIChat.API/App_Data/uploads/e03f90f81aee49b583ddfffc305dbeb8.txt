@@ -1,0 +1,7 @@
+C# is a programming language developed by Microsoft.
+
+ASP.NET Core is a framework used to build web applications and APIs.
+
+Qdrant is a vector database designed for storing and searching vector embeddings.
+
+Retrieval Augmented Generation (RAG) combines information retrieval with large language models to generate context-aware answers.
